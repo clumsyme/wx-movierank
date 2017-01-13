@@ -1,0 +1,57 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="section">
+    <view class="bar">
+      <picker value="{{tagIndex}}" range="{{tags}}" bindchange="bindTagChange">
+        <view class="picker">
+          {{tags[tagIndex]}}类
+        </view>
+      </picker>
+      <view> - </view>
+      <picker value="{{orderIndex}}" range-key="sub" range="{{order}}" bindchange="bindOrderChange">
+        <view class="picker">
+          按{{order[orderIndex].sub}}
+        </view>
+      </picker>
+    </view>
+    <view class="bar">
+      <picker value="{{mirIndex}}" range="{{rs}}" bindchange="bindMirChange">
+        <view class="picker">
+          {{mirIndex}}分
+        </view>
+      </picker>
+      <view> - </view>
+      <picker value="{{marIndex}}" range="{{rs}}" bindchange="bindMarChange">
+        <view class="picker">
+          {{marIndex}}分
+        </view>
+      </picker>
+    </view>
+
+    <view class="bar">
+      <picker value="{{mirnIndex}}" range="{{ns}}" bindchange="bindMirnChange">
+        <view class="picker">
+          {{ns[mirnIndex]}}人
+        </view>
+      </picker>
+      <view> - </view>
+
+      <picker value="{{marnIndex}}" range="{{ns}}" bindchange="bindMarnChange">
+        <view class="picker">
+          {{ns[marnIndex]}}人
+        </view>
+      </picker>
+    </view>
+    
+    <button bindtap="getMovies">
+      <icon size="mini" type="search" /> 查看 </button>
+  </view>
+  <view class="movielist">
+    <view wx:for="{{movies}}" wx:for-index="ranking" wx:for-item="movie" class="movie">
+      <text class="title">{{movie[1]}}</text>
+      <text class="rating">评分：{{movie[2]}} </text>
+      <text class="rated">人数： {{movie[3]}}</text>
+      <text class="ranking">#{{ranking+1}}</text>
+    </view>
+  </view>
+</view>

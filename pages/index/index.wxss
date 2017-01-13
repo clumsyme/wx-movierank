@@ -1,0 +1,59 @@
+/**index.wxss**/
+.container {
+  /*font-family: 仿宋;*/
+  background: #fcfcfc;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.section {
+  width: 100%;
+  padding: 20px 0;
+  background: tomato;
+}
+.bar {
+  color: #ecf0f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.8em;
+}
+picker {
+  width: 22%;
+  border-radius: 5px;
+  background: #fff;
+  color: #888;
+  padding: 0.3em 0.5em;
+  margin: 0 0.8em;
+  display: inline-block;
+}
+button {
+  background: #2980b9;
+  color: #ecf0f1;
+  margin: 1em auto 0;
+  font-weight: 600;
+  width: 50%;
+}
+.movielist {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  /*font-family: 微软雅黑;*/
+}
+.movie {
+  padding: 1em;
+  border-bottom: 1px dashed #aaa;
+}
+.title {
+  display: block;
+  margin: 0 0 1em;
+  font-size: 1.2em;
+}
+.rating, .rated {
+}
+.ranking {
+  float: right
+}
