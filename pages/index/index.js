@@ -1,6 +1,15 @@
 //index.js
 //获取应用实例
 var app = getApp()
+
+function getPickerHandler(name) {
+  return function(e) {
+    this.setData({
+      [name]: e.detail.value
+    })
+  }
+}
+
 Page({
   data: {
     movies: [],
@@ -22,36 +31,12 @@ Page({
     ns: [0, 20000, 50000, 100000, 200000, 300000, 400000, 500000, 600000, 700000, 800000, 900000],
   },
   //事件处理函数
-  bindTagChange: function(e) {
-    this.setData({
-      tagIndex: e.detail.value
-    })
-  },
-  bindMirChange: function(e) {
-    this.setData({
-      mirIndex: e.detail.value
-    })
-  },
-  bindMarChange: function(e) {
-    this.setData({
-      marIndex: e.detail.value
-    })
-  },
-  bindMirnChange: function(e) {
-    this.setData({
-      mirnIndex: e.detail.value
-    })
-  },
-  bindMarnChange: function(e) {
-    this.setData({
-      marnIndex: e.detail.value
-    })
-  },
-  bindOrderChange: function(e) {
-    this.setData({
-      orderIndex: e.detail.value
-    })
-  },
+  bindTagChange: getPickerHandler("tagIndex"),
+  bindMirChange: getPickerHandler("mirIndex"),
+  bindMarChange: getPickerHandler("marIndex"),
+  bindMirnChange: getPickerHandler("mirnIndex"),
+  bindMarnChange: getPickerHandler("marnIndex"),
+  bindOrderChange: getPickerHandler("orderIndex"),
   getMovies: function() {
     var tag
     if (this.data.tagIndex == 0) {
