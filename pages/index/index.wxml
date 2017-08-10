@@ -43,7 +43,7 @@
       </picker>
     </view>
     
-    <button bindtap="getMovies">
+    <button bindtap="reGet">
       <icon size="mini" type="search" /> 查看 </button>
   </view>
   <view class="movielist">
