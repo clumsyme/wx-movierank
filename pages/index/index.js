@@ -6,7 +6,6 @@ function getPickerHandler(name) {
   return function (e) {
     this.setData({
       [name]: e.detail.value,
-      start: 0,
     })
   }
 }
@@ -70,6 +69,7 @@ Page({
   },
   reGet: function () {
     this.setData({
+      start: 0,
       movies: [],
     })
     this.getMovies()
