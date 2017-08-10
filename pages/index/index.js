@@ -52,17 +52,22 @@ Page({
                 + "/marn=" + this.data.ns[this.data.marnIndex]
                 + "/od=" + this.data.order[this.data.orderIndex].name
                 + "/start=" + this.data.start + "/";
+    this.data.start += 20
+    var preMovies = this.data.movies
     var that = this
     wx.request({
       url: url,
       success: function(res) {
         that.setData({
-          movies: res.data
+          movies: preMovies.concat(res.data)
         })
       }
     })
   },
   onLoad: function () {
+    this.getMovies()
+  },
+  onReachBottom: function () {
     this.getMovies()
   }
 })
